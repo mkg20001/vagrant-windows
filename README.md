@@ -1,5 +1,5 @@
 # vagrant-windows
 
-Windows Vagrant Box Build Script
+Fully automatic windows vagrant box build and setup script
 
 > WIP
