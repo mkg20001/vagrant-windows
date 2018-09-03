@@ -48,6 +48,10 @@ VBoxManage import "$VM_NAME.ova"
 # Run OS-specific install steps
 . install.sh
 
+# Start
+VBoxManage startvm "$VM_NAME" --type=headless
+sleep 10s
+
 # Wait
 echo "Waiting for setup to complete and VM to shut down..."
 while ! VBoxManage showvminfo "$VM_NAME" --machinereadable --details | grep VMState= | grep poweroff > /dev/null 2> /dev/null; do
