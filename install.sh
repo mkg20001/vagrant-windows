@@ -20,6 +20,12 @@ log() {
   echo "$(date): $@"
 }
 
+if [ -z "$SETUP_URL" ]; then
+  export SETUP_URL=https://raw.github.com/mkg20001/vagrant-windows/master/setup
+else # if you're changing the scripts launch a local webserver to serve setup/ with e.g. https://npm.im/http-server and add it's address here
+  log "Using custom setup url: $SETUP_URL"
+fi
+
 MAIN=$PWD
 cd "$TYPE"
 
