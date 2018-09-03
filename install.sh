@@ -64,3 +64,6 @@ echo " ok"
 VBoxManage storageattach "$VM_NAME" --storagectl SATA --port 1 --medium emptydrive
 VBoxManage storageattach "$VM_NAME" --storagectl SATA --port 2 --medium none
 VBoxManage storagectl "$VM_NAME" --name Floppy --remove
+
+# Vagrant package
+vagrant package --base "$VM_NAME" --output "$MAIN/$TYPE.box" --vagrantfile "$PWD/Vagrantfile"
